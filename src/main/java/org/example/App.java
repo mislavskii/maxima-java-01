@@ -4,9 +4,15 @@ public class App
 {
     public static void main( String[] args )
     {
-        String str = "Hello";
+        int a = 17;
+        int b = 11;
 
-        System.out.println( "Hello World!" );
-        System.out.println(str);
+        System.out.println("a = " + a + ", b = " + b);
+
+        int c = a;
+        a = b;
+        b = c;
+
+        System.out.println("a = " + a + ", b = " + b);
     }
 }
