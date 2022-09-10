@@ -3,17 +3,11 @@ package org.example;
 public class App
 {
     public static void main( String[] args ) {
-        System.out.println(sayHello("World!", 17));
-        System.out.println(sayHello("Java", 11));
-        System.out.println(sayHello("people", 71));
+        System.out.println(factorial(4));
     }
 
-    public static String sayHello(String msg, int num) {
-       return "Hello " + myCount(num) + " " + msg + "!!";
-    }
-
-    public static int myCount(int num) {
-        return num + 5;
+    public static int factorial(int n) {
+        return n == 1 ? n : n * factorial(n-1);
     }
 }
 
