@@ -4,15 +4,14 @@ public class App
 {
     public static void main( String[] args )
     {
-        int a = 17;
-        int b = 11;
+        mySubProgram();
+        mySubProgram();
+    }
 
-        System.out.println("a = " + a + ", b = " + b);
-
-        int c = a;
-        a = b;
-        b = c;
-
-        System.out.println("a = " + a + ", b = " + b);
+    public static void mySubProgram() {
+        System.out.println("Hello, World!");
+        System.out.println("Hello, Java");
+        System.out.println("Hello, people");
+        System.out.println();
     }
 }
