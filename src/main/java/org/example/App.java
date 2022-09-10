@@ -9,7 +9,11 @@ public class App
     }
 
     public static String sayHello(String msg, int num) {
-       return "Hello " + num + " " + msg + "!!";
+       return "Hello " + myCount(num) + " " + msg + "!!";
+    }
+
+    public static int myCount(int num) {
+        return num + 5;
     }
 }
 
