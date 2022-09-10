@@ -3,13 +3,13 @@ package org.example;
 public class App
 {
     public static void main( String[] args ) {
-        mySubProgram("Hello, World!");
-        mySubProgram("Hello, Java");
-        mySubProgram("Hello, people");
+        sayHello("World!");
+        sayHello("Java");
+        sayHello("people");
     }
 
-    public static void mySubProgram(String msg) {
-        System.out.println(msg);
+    public static void sayHello(String msg) {
+        System.out.println("Hello " + msg + "!!");
     }
 }
 
