@@ -7,9 +7,13 @@ public class App
         System.out.println(sayHello("Java",5, true));
         System.out.println();
 
-        System.out.println("Цикл со счетчиком:");
-        for (int i=0; i<5; i++) {
-            System.out.println(i);
+        System.out.println("Циклы со счетчиком (один в другом):");
+        for (int i=10; i<=20; i++) {
+            String str = "";
+            for (int k=10; k<=20; k++) {
+                str += i * k + " ";
+            }
+            System.out.println(str);
         }
         System.out.println();
 
@@ -24,8 +28,8 @@ public class App
         System.out.println("Цикл с постусловием:");
         int j = 0;
         do {
-            System.out.println(j);
             j++;
+            System.out.println(j);
         } while (j<5);
         System.out.println();
 
