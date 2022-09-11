@@ -9,15 +9,15 @@ public class App
         System.out.println();
 
         System.out.println("Циклы со счетчиком (один в другом):");
-        String head = "    ";
+        String head = "   ";
         for (int i=10; i<=20; i++) {
-            head += " " + i + " ";
+            head += "  " + i;
         }
         System.out.println(head);
         for (int i=10; i<=20; i++) {
-            String row = i + "  ";
+            String row = i + " ";
             for (int k=10; k<=20; k++) {
-                row += i * k + " ";
+                row += " " + i * k;
             }
             System.out.println(row);
         }
