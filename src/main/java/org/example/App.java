@@ -8,6 +8,18 @@ public class App
         System.out.println(sayHello("Java",5, true));
         System.out.println();
 
+        System.out.println("Arrays");
+        int nums[];
+        nums = new int[4];  // initialized with number of members
+        int[] nums2 = new int[] {1,2,3,4,5};
+        int[] nums3 = {1,2,3,4,5,6};
+
+        for (int i = 0; i < nums3.length; i++) {
+            System.out.println(nums3[i]);
+        }
+
+        System.out.println();
+
         System.out.println("Циклы со счетчиком (один в другом):");
         String head = "   ";
         for (int i=10; i<=20; i++) {
