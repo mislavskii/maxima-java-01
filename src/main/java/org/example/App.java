@@ -3,14 +3,16 @@ package org.example;
 public class App
 {
     public static void main( String[] args ) {
-        System.out.println(sayHello("Java",5, true));
+        System.out.println(sayHello("Java",5, false));
     }
 
     public static String sayHello(String msg, int num, boolean flag) {
         if (flag) {
-            System.out.println("Istina");
+            return "Hello " + num + " " + msg + "!!";
+        } else {
+            return "Good bye " + num + " " + msg + "!!";
         }
-        return "Hello " + num + " " + msg + "!!";
+//        return "Hello " + num + " " + msg + "!!";
     }
 
 
