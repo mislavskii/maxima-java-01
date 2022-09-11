@@ -3,8 +3,34 @@ package org.example;
 public class App
 {
     public static void main( String[] args ) {
-        System.out.println(sayHello("Java",5, false));
-        System.out.println(getSeason(13));
+
+        System.out.println(sayHello("Java",5, true));
+        System.out.println();
+
+        System.out.println("Цикл со счетчиком:");
+        for (int i=0; i<5; i++) {
+            System.out.println(i);
+        }
+        System.out.println();
+
+        System.out.println("Цикл с предусловием:");
+        int i = 0;
+        while (i<5) {
+            System.out.println(i);
+            i++;
+        }
+        System.out.println();
+
+        System.out.println("Цикл с постусловием:");
+        int j = 0;
+        do {
+            System.out.println(j);
+            j++;
+        } while (j<5);
+        System.out.println();
+
+        System.out.println(getSeason(9));
+
     }
 
     public static String sayHello(String msg, int num, boolean flag) {
@@ -21,25 +47,25 @@ public class App
             case 1:
             case 2:
             case 12:
-                result = "Winter";
+                result = "Зима";
                 break;
             case 3:
             case 4:
             case 5:
-                result = "Spring";
+                result = "Весна";
                 break;
             case 6:
             case 7:
             case 8:
-                result = "Summer";
+                result = "Лето";
                 break;
             case 9:
             case 10:
             case 11:
-                result = "Autumn";
+                result = "Осень";
                 break;
             default:
-                result = "Unknown season";
+                result = "Сезон не определен";
         }
         return result;
     }
