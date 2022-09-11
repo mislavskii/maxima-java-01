@@ -17,7 +17,14 @@ public class App
         for (int i = 0; i < nums3.length; i++) {
             System.out.println(nums3[i]);
         }
+        System.out.println();
 
+        nums3[3] = 10;
+        nums3[1] = 20;
+
+        for (int i: nums3) {
+            System.out.println(i);
+        }
         System.out.println();
 
         System.out.println("Циклы со счетчиком (один в другом):");
