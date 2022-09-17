@@ -1,21 +1,51 @@
 package org.example;
 
 @SuppressWarnings("StringConcatenationInLoop")
-public class App
-{
+public class App {
+
     public static void main( String[] args ) {
+        System.out.println(fibonazzi((byte) 5));
+    }
 
-        System.out.println(sayHello("Java",5, true));
-        System.out.println();
+    static long a = 0;
+    static long b = 1;
+    static long F;
+    public static long fibonazzi(byte N) {
+        F = a + b; a = b; b = F;
+        return N <= 1 ? N : fibonazzi((byte) (N-1)) + fibonazzi((byte) (N-2));
+    }
 
+    public static long fiboNoRec(byte N) {
+        if (N <= 1) {
+            return N;
+        } else {
+            byte i = N;
+            while (i > 1) {
+                F = a + b;
+                System.out.println(F);
+                a = b;
+                b = F;
+                i--;
+            }
+            return F;
+        }
+    }
+
+    public static String sayHello(String msg, int num, boolean flag) {
+        if (flag) {
+            return "Привет " + num + " " + msg + "!!";
+        } else {
+            return "Пока " + num + " " + msg + "!!";
+        }
+    }
+
+    public static void arrays() {
         System.out.println("Arrays");
-        int nums[];
-        nums = new int[4];  // initialized with number of members
-        int[] nums2 = new int[] {1,2,3,4,5};
+
         int[] nums3 = {1,2,3,4,5,6};
 
-        for (int i = 0; i < nums3.length; i++) {
-            System.out.println(nums3[i]);
+        for (int value : nums3) {
+            System.out.println(value);
         }
         System.out.println();
 
@@ -25,8 +55,10 @@ public class App
         for (int i: nums3) {
             System.out.println(i);
         }
-        System.out.println();
 
+    }
+
+    public static void cycles() {
         System.out.println("Циклы со счетчиком (один в другом):");
         String head = "   ";
         for (int i=10; i<=20; i++) {
@@ -57,17 +89,6 @@ public class App
             System.out.println(j);
         } while (j<5);
         System.out.println();
-
-        System.out.println(getSeason(9));
-
-    }
-
-    public static String sayHello(String msg, int num, boolean flag) {
-        if (flag) {
-            return "Привет " + num + " " + msg + "!!";
-        } else {
-            return "Пока " + num + " " + msg + "!!";
-        }
     }
 
     public static String getSeason (int month) {
