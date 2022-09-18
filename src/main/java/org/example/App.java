@@ -6,12 +6,20 @@ import java.util.Random;
 public class App {
 
     public static void main( String[] args ) {
-        Random rand = new Random();
-        int month = (rand.nextInt(12) + 1);
-        int year = rand.nextInt(9998) + 1;
-        System.out.println(month + " / " + year);
 
-        System.out.println(daysCount((byte) month, year));
+        Random rand = new Random();
+
+        int n = rand.nextInt(999) + 1;
+        System.out.println(isSimple(n) == 0 ? n + " - простое число" : "наименьший делитель для " + n + ": " + isSimple(n));
+
+    }
+
+    public static int isSimple(int n) {
+        for (int i=2; i <= n/2; i++) {
+            if (n % i == 0) {
+                return i;
+            }
+        } return 0;
     }
 
     public static byte daysCount(byte month, int year) {
