@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.Arrays;
 import java.util.Random;
 
 @SuppressWarnings("StringConcatenationInLoop")
@@ -11,7 +12,46 @@ public class App {
 
         int n = rand.nextInt(999) + 1;
         System.out.println(isSimple(n) == 0 ? n + " - простое число" : "наименьший делитель для " + n + ": " + isSimple(n));
+        System.out.println();
 
+        int[] arr = {
+                rand.nextInt(999) + 1,
+                rand.nextInt(999) + 1,
+                rand.nextInt(999) + 1,
+                rand.nextInt(999) + 1,
+                rand.nextInt(999) + 1,
+                rand.nextInt(999) + 1,
+                rand.nextInt(999) + 1,
+                rand.nextInt(999) + 1,
+                rand.nextInt(999) + 1,
+                rand.nextInt(999) + 1,
+                rand.nextInt(999) + 1,
+                (rand.nextInt(999) + 1)
+        };
+        System.out.println(Arrays.toString(arr));
+        System.out.println(maxDigitsSumPosition(arr));
+
+    }
+
+    //TODO: Написать функцию byte maxDigitsSumPosition(int[] arr), которая вернет наибольший индекс элемента, имеющего максимальную сумму цифр.
+
+    public static byte maxDigitsSumPosition(int[] arr) {
+        byte maxDigitsSum = 0;
+        byte position = 0;
+        for (byte i=0; i < arr.length; i++) {
+            String s = Integer.toString(arr[i]);
+            byte digitsSum = 0;
+            for (char c : s.toCharArray()) {
+                digitsSum += Character.getNumericValue(c);
+            }
+            System.out.println(i + ": " + digitsSum);
+            if (digitsSum >= maxDigitsSum) {
+                maxDigitsSum = digitsSum;
+                position = i;
+            }
+        }
+        System.out.println();
+        return position;
     }
 
     public static int isSimple(int n) {
