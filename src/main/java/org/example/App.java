@@ -33,8 +33,6 @@ public class App {
 
     }
 
-    //TODO: Написать функцию byte maxDigitsSumPosition(int[] arr), которая вернет наибольший индекс элемента, имеющего максимальную сумму цифр.
-
     public static byte maxDigitsSumPosition(int[] arr) {
         byte maxDigitsSum = 0;
         byte position = 0;
@@ -44,13 +42,11 @@ public class App {
             for (char c : s.toCharArray()) {
                 digitsSum += Character.getNumericValue(c);
             }
-            System.out.println(i + ": " + digitsSum);
             if (digitsSum >= maxDigitsSum) {
                 maxDigitsSum = digitsSum;
                 position = i;
             }
         }
-        System.out.println();
         return position;
     }
 
