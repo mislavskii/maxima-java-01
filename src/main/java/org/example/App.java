@@ -10,9 +10,8 @@ public class App {
 
         Random rand = new Random();
 
-        int n = rand.nextInt(999) + 1;
-        System.out.println(isSimple(n) == 0 ? n + " - простое число" : "наименьший делитель для " + n + ": " + isSimple(n));
-        System.out.println();
+        int n = rand.nextInt(1000);
+        System.out.println(n + ": " + sumOfDigits(n));
 
         int[] arr = {
                 rand.nextInt(999) + 1,
@@ -26,8 +25,9 @@ public class App {
                 rand.nextInt(999) + 1,
                 rand.nextInt(999) + 1,
                 rand.nextInt(999) + 1,
-                (rand.nextInt(999) + 1)
+                rand.nextInt(999) + 1
         };
+
         System.out.println(Arrays.toString(arr));
         System.out.println(maxDigitsSumPosition(arr));
 
@@ -49,6 +49,16 @@ public class App {
         }
         return position;
     }
+
+    public static int sumOfDigits(int n) {
+        int sum = 0;
+        while (n / 10 >= 1) {
+            sum += n % 10;
+            n = n / 10;
+        }
+        return sum + n;
+    }
+
 
     public static int isSimple(int n) {
         for (int i=2; i <= n/2; i++) {
