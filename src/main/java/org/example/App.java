@@ -37,11 +37,7 @@ public class App {
         byte maxDigitsSum = 0;
         byte position = 0;
         for (byte i=0; i < arr.length; i++) {
-            String s = Integer.toString(arr[i]);
-            byte digitsSum = 0;
-            for (char c : s.toCharArray()) {
-                digitsSum += Character.getNumericValue(c);
-            }
+            byte digitsSum = (byte) sumOfDigits(arr[i]);
             if (digitsSum >= maxDigitsSum) {
                 maxDigitsSum = digitsSum;
                 position = i;
